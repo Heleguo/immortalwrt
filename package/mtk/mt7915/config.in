@@ -421,7 +421,7 @@ config MTK_MT7915_TXBF_SUPPORT
 config MTK_MT7915_FAST_NAT_SUPPORT
        bool "Fast-NAT support"
 #      depends on RA_HW_NAT_WIFI
-       default y
+       default n
 
 config MTK_MT7915_WHNAT_SUPPORT
 	tristate "Wifi Hardware NAT support"
