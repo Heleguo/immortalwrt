@@ -3306,7 +3306,7 @@ define Device/xiaomi_mi-router-cr660x
   IMAGES += firmware.bin
   IMAGE/firmware.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
 	check-size
-  DEVICE_PACKAGES += kmod-mt7915-firmware
+  DEVICE_PACKAGES += kmod-mt7915 luci-app-mtk wireless-tools -wpad-openssl
 endef
 
 define Device/xiaomi_mi-router-cr6606
