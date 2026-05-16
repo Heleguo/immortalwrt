@@ -104,7 +104,7 @@ static inline void netdev_priv_set(struct net_device *dev, void *priv)
 #endif
 }
 
-int DebugLevel = DBG_LVL_ERROR;
+int DebugLevel = DBG_LVL_OFF;
 
 int DebugLevel_BkUp = DBG_LVL_ERROR;
 
