@@ -392,7 +392,7 @@ NDIS_STATUS RTMPAllocateNdisPacket(
 VOID RTMPFreeNdisPacket(VOID *pReserved, PNDIS_PACKET pPacket)
 {
 	if (pPacket) {
-		dev_kfree_skb_any(RTPKT_TO_OSPKT(pPacket));
+		napi_consume_skb(RTPKT_TO_OSPKT(pPacket), 1);
 		MEM_DBG_PKT_FREE_INC(pPacket);
 	}
 }

@@ -5446,6 +5446,7 @@ static NDIS_STATUS pci_init_task_group(void *hdev_ctrl)
 
 			hif_chip->schedule_task_ops = &tasklet_napi_schedule_ops;
 			init_dummy_netdev(&task_group->napi_dev);
+			task_group->napi_dev.threaded = 1;
 			task_group->priv = (VOID *)hif_chip;
 			netif_napi_add(&task_group->napi_dev, &task_group->rx_data_done_napi_task, pci_rx_data_done_poll_func, NAPI_POLL_WEIGHT);
 			ad->tr_ctl.napi = (VOID *)&task_group->rx_data_done_napi_task;

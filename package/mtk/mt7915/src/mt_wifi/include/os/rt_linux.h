@@ -856,9 +856,9 @@ void linux_pci_unmap_single(void *handle, ra_dma_addr_t dma_addr, size_t size, i
 #define DEV_BUILD_SKB(_Pkt, data_ptr, _length)				\
 	do {\
 		if ((_length) == 0) {	\
-			_Pkt = build_skb(data_ptr, 0);	\
+			_Pkt = napi_build_skb(data_ptr, 0);	\
 		} else {								\
-			_Pkt = build_skb(data_ptr, (_length));\
+			_Pkt = napi_build_skb(data_ptr, (_length));\
 		};	\
 	} while (0)
 
